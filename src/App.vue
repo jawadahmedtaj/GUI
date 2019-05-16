@@ -10,7 +10,6 @@
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-
 body {
   background-color: #eeeeee;
   font-family: "Montserrat", sans-serif;
@@ -27,11 +26,9 @@ html {
 #app {
   width: 50%;
 }
-
 #nav {
   padding: 20px 20px 20px 0;
 }
-
 #nav a {
   padding: 10px;
   text-decoration: none;

@@ -68,17 +68,14 @@ export default {
 <style scoped>
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-
 .holder {
   background: #fff;
 }
-
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
 ul li {
   padding: 20px;
   font-size: 1.3em;
@@ -87,17 +84,14 @@ ul li {
   margin-bottom: 2px;
   color: #3e5252;
 }
-
 p {
   text-align: center;
   padding: 30px 0;
   color: gray;
 }
-
 .container {
   box-shadow: 0px 0px 40px lightgray;
 }
-
 input {
   width: calc(100% - 40px);
   border: 0;
@@ -106,7 +100,6 @@ input {
   background-color: #323333;
   color: #687f7f;
 }
-
 .alert {
   background: #fdf2ce;
   font-weight: bold;
@@ -114,15 +107,12 @@ input {
   padding: 5px;
   margin-top: -20px;
 }
-
 i {
   float: right;
 }
-
 /* .alert-in-enter-active {
   animation: bounce-in 0.5s;
 }
-
 .alert-in-leave-active {
   animation: bounce-in 0.5s;
 }

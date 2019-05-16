@@ -1,4 +1,4 @@
-# vue
+# gcgui
 
 ## Project setup
 ```
