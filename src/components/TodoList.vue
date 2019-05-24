@@ -1,5 +1,7 @@
 <template>
   <div class="TodoList">
+    <Chart/>
+    <div class="chart"></div>
     <div class="holder">
       <form @submit.prevent="addSkill">
         <input
@@ -35,8 +37,12 @@
 </template>
 
 <script>
+import Chart from "./Chart";
 export default {
   name: "TodoList",
+  components: {
+    Chart
+  },
   data() {
     return {
       skill: "",
