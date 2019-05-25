@@ -41,7 +41,8 @@ import Chart from "./Chart";
 export default {
   name: "TodoList",
   components: {
-    Chart
+    Chart,
+    TodoList
   },
   data() {
     return {
