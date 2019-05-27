@@ -46,7 +46,7 @@ export default {
       ]
     };
   },
-  methods: {
+  methods: {/*
     addSkill() {
       this.$validator.validateAll().then(result => {
         if (result) {
@@ -55,7 +55,7 @@ export default {
         } else {
         }
       });
-    },
+    },*/
     remove(id) {
       this.skills.splice(id, 1);
     }
