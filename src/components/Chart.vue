@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-new Vue({
+export default({
   el: "#chart",
   components: {
     apexchart: VueApexCharts

@@ -1,9 +1,7 @@
 <template>
   <div class="TodoList">
-    <Chart/>
-    <div class="chart"></div>
     <div class="holder">
-      <form @submit.prevent="addSkill">
+      <!--<form @submit.prevent="addSkill">
         <input
           type="text"
           placeholder="Please enter a skill which you have"
@@ -15,10 +13,9 @@
           name="alert-in"
           enter-active-class="animated flipInX"
           leave-active-class="animated flipOutX"
-        >
           <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
         </transition>
-      </form>
+      </form>>-->
       <ul>
         <transition-group
           name="list"
@@ -37,13 +34,8 @@
 </template>
 
 <script>
-import Chart from "./Chart";
 export default {
   name: "TodoList",
-  components: {
-    Chart,
-    TodoList
-  },
   data() {
     return {
       skill: "",
