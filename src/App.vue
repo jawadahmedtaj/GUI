@@ -4,6 +4,7 @@
       <router-link to="/">Hardware Configuration</router-link>
       <router-link to="/Chart">Chart</router-link>
       <router-link to="/About">About</router-link>
+      <router-link to="/GChart">GChart</router-link>
     </div>
     <router-view/>
   </div>
@@ -22,7 +23,7 @@ body {
 body,
 html {
   margin: 0;
-  height: 100%;
+  height: 95%;
 }
 #app {
   width: 50%;

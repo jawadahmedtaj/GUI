@@ -28,7 +28,6 @@
           </li>
         </transition-group>
       </ul>
-      <p>Get to work pleb</p>
     </div>
   </div>
 </template>
@@ -46,7 +45,8 @@ export default {
       ]
     };
   },
-  methods: {/*
+  methods: {
+    /*
     addSkill() {
       this.$validator.validateAll().then(result => {
         if (result) {
