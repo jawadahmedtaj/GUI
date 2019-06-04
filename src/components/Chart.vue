@@ -7,9 +7,9 @@
 import ApexCharts from "apexcharts";
 export default {
   el: "#chart",
-  name: "ApexCharts",
+  name: "Chart",
   components: {
-    apexchart: ApexCharts
+    Chart: ApexCharts
   },
   data() {
     return {
