@@ -4,7 +4,7 @@ import TodoList from './components/TodoList.vue';
 import About from './components/About.vue';
 import GChart from './components/GChart.vue';
 import SignUp from './components/SignUp.vue';
-//import Chart from './components/Chart.vue';
+import Chart from './components/Chart.vue';
 
 Vue.use(Router);
 
@@ -33,10 +33,11 @@ export default new Router({
 			path: '/SignUp',
 			name: 'SignUp',
 			component: SignUp
-		} /*
+		},
+		{
 			path: '/Chart',
 			name: 'Chart',
 			component: Chart
-		}*/
+		}
 	]
 });
