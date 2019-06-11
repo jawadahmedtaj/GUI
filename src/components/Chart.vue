@@ -11,7 +11,6 @@
 //https://github.com/apexcharts/vue-apexcharts/issues/1
 import VueApexCharts from "vue-apexcharts";
 export default {
-  el: "#chart",
   name: "Chart",
   components: {
     apexchart: VueApexCharts
@@ -25,7 +24,7 @@ export default {
         },
         {
           name: "Potatoes",
-          data: [10, 20, 90, 40, 50, 60,-30]
+          data: [10, 20, 90, 40, 50, 60, -30]
         }
       ],
       chartOptions: {

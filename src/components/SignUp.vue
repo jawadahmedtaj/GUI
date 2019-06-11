@@ -6,7 +6,7 @@
       <input type="text" placeholder="John Jones" v-model="name" name="name">
       <input type="date" placeholder="DD.MM.YYYY" v-model="date" name="date">
       <input type="text" placeholder="Bauhaus University" v-model="company" name="company">
-      <button class="signUp signUpButton">Sign Up</button>
+      <button class="signUp signUpButton signUpAnimation">Sign Up</button>
       <input class="signUp signUpBorder" type="reset">
     </form>
   </div>
@@ -39,7 +39,7 @@ input {
   background-color: #323333;
   color: #687f7f;
 }
-.signUp{
+.signUp {
   width: calc(100% - 50%);
   border: 0;
   padding: 20px;
@@ -48,12 +48,7 @@ input {
   color: #687f7f;
   position: relative;
 }
-.signUpBorder{
-  border: 1 2 3 4;
-  border-color: aqua;
-  border-style: solid;
-}
-.signUpButton{
+.signUpButton {
   background-color: #209954;
   color: white;
 }

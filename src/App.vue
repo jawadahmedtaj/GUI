@@ -1,14 +1,28 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Hardware Configuration</router-link>
-      <router-link to="/Chart">Chart</router-link>
-      <router-link to="/About">About</router-link>
-      <router-link to="/SignUp">Sign up</router-link>
+      <Slide>
+        <router-link to="/">Hardware Configuration</router-link>
+        <router-link to="/Chart">Chart</router-link>
+        <router-link to="/About">About</router-link>
+        <router-link to="/SignUp">Sign up</router-link>
+      </Slide>
+
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script>
+//https://github.com/mbj36/vue-burger-menu
+import { Slide } from "vue-burger-menu";
+export default {
+  components: {
+    Slide
+  }
+};
+</script>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
@@ -30,16 +44,18 @@ html {
 #app {
   width: 50%;
 }
+.bm-item-list {
+  margin-left: 0% !important;
+}
 #nav {
   padding: 20px 20px 20px 0;
 }
 #nav a {
   padding: 10px;
   text-decoration: none;
-  background: #ffffff;
   border-radius: 3px;
-  color: rgb(0, 110, 255);
+  background-color: #323333;
+  color: #687f7f;
   font-weight: bold;
-  margin-right: 15px;
 }
 </style>
