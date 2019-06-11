@@ -29,6 +29,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/*Colors
+https://coolors.co/323333-b4adea-fdfff7-209954-ffed65*/
 input {
   width: calc(100% - 40px);
   border: 0;
