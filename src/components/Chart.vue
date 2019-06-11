@@ -25,7 +25,7 @@ export default {
         },
         {
           name: "Potatoes",
-          data: [10, 20, 90, 40, 50, 60]
+          data: [10, 20, 90, 40, 50, 60,-30]
         }
       ],
       chartOptions: {
