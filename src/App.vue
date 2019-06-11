@@ -4,7 +4,6 @@
       <router-link to="/">Hardware Configuration</router-link>
       <router-link to="/Chart">Chart</router-link>
       <router-link to="/About">About</router-link>
-      <router-link to="/GChart">GChart</router-link>
       <router-link to="/SignUp">Sign up</router-link>
     </div>
     <router-view/>
