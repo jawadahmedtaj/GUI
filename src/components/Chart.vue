@@ -11,21 +11,15 @@
         >
         <br>
         <span v-for="(value, index1) in data.data" :key="index1">
+          &nbsp;
+          <label>{{chartOptions.xaxis.categories[index1]}}:</label>&nbsp;
           <input type="number" v-model="data.data[index1]">
+          <span v-if="index1 == 2">
+            <br>
+          </span>
         </span>
       </div>
     </form>
-    <!-- <form>
-      <label>Please enter a name for configuration:&nbsp;</label>
-      <input
-        type="text"
-        placeholder="Name of Configuration"
-        v-model="series[0].name"
-        name="configName"
-      >
-      <br>
-      {{series[0].data[1]}}
-    </form>-->
     <apexchart type="bar" height="350" :options="chartOptions" :series="series"/>
   </div>
 </template>
@@ -45,16 +39,16 @@ export default {
     return {
       series: [
         {
-          name: "",
-          data: [44, 55, 57, 56, 61]
+          name: "Configuration 1",
+          data: [44, 55, 57, 56, 61, 72]
         },
         {
-          name: "",
-          data: [76, 85, 101, 98, 87]
+          name: "Configuration 2",
+          data: [76, 85, 101, 98, 87, 72]
         },
         {
-          name: "",
-          data: [35, 41, 36, 26, 45]
+          name: "Configuration 3",
+          data: [35, 41, 36, 26, 45, 72]
         }
       ],
       chartOptions: {
@@ -63,6 +57,28 @@ export default {
             horizontal: false,
             columnWidth: "50%",
             endingShape: "rounded"
+          }
+        },
+        zoom: {
+          enabled: true,
+          type: "y",
+          zoomedArea: {
+            fill: {
+              color: "#90CAF9",
+              opacity: 0.4
+            },
+            stroke: {
+              color: "#0D47A1",
+              opacity: 0.4,
+              width: 1
+            }
+          }
+        },
+        legend: {
+          showForNullSeries: false,
+          showForZeroSeries: false,
+          onItemClick: {
+            toggleDataSeries: false
           }
         },
         dataLabels: {
@@ -75,7 +91,14 @@ export default {
         },
 
         xaxis: {
-          categories: ["CPU", "RAM", "PCI", "Disk", "Network"]
+          categories: [
+            "CPU-SingleCore",
+            "CPU-MultiCore",
+            "RAM",
+            "PCI",
+            "Disk",
+            "Network"
+          ]
         },
         yaxis: {
           title: {
