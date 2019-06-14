@@ -1,6 +1,32 @@
 !<template>
   <div id="chart">
-    <apexchart type="line" height="350" :options="chartOptions" :series="series"/>
+    <form>
+      <div v-for="(data,index) in series" :key="index">
+        <label>Please enter a name for configuration:&nbsp;</label>
+        <input
+          type="text"
+          placeholder="Name of Configuration"
+          v-model="data.name"
+          name="configName"
+        >
+        <br>
+        <span v-for="(value, index1) in data.data" :key="index1">
+          <input type="number" v-model="data.data[index1]">
+        </span>
+      </div>
+    </form>
+    <!-- <form>
+      <label>Please enter a name for configuration:&nbsp;</label>
+      <input
+        type="text"
+        placeholder="Name of Configuration"
+        v-model="series[0].name"
+        name="configName"
+      >
+      <br>
+      {{series[0].data[1]}}
+    </form>-->
+    <apexchart type="bar" height="350" :options="chartOptions" :series="series"/>
   </div>
 </template>
 <!--<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>-->
@@ -19,49 +45,45 @@ export default {
     return {
       series: [
         {
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+          name: "",
+          data: [44, 55, 57, 56, 61]
         },
         {
-          name: "Potatoes",
-          data: [10, 20, 90, 40, 50, 60, -30]
+          name: "",
+          data: [76, 85, 101, 98, 87]
+        },
+        {
+          name: "",
+          data: [35, 41, 36, 26, 45]
         }
       ],
       chartOptions: {
-        chart: {
-          height: 350,
-          zoom: {
-            enabled: false
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "50%",
+            endingShape: "rounded"
           }
         },
         dataLabels: {
           enabled: false
         },
         stroke: {
-          curve: "straight"
+          show: true,
+          width: 2,
+          colors: ["transparent"]
         },
-        title: {
-          text: "Product Trends by Month",
-          align: "left"
+
+        xaxis: {
+          categories: ["CPU", "RAM", "PCI", "Disk", "Network"]
         },
-        grid: {
-          row: {
-            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-            opacity: 0.5
+        yaxis: {
+          title: {
+            text: "Values"
           }
         },
-        xaxis: {
-          categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep"
-          ]
+        fill: {
+          opacity: 1
         }
       }
     };

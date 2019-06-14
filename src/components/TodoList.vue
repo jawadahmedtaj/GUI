@@ -1,5 +1,7 @@
 <template>
   <div class="TodoList">
+    <!--<apexchart type="bar" height="350" :options="chartOptions" :series="series"/>
+    <apexchart1 type="line" height="350" :options="chartOptions" :series="series"/>-->
     <div class="holder">
       <!--<form @submit.prevent="addSkill">
         <input
@@ -33,8 +35,13 @@
 </template>
 
 <script>
+//import VueApexCharts from "vue-apexcharts";
 export default {
   name: "TodoList",
+  components: {
+    //apexchart: VueApexCharts,
+    //apexchart1: VueApexCharts
+  },
   data() {
     return {
       skill: "",
@@ -42,7 +49,50 @@ export default {
         { skill: "Vue.js" },
         { skill: "Front-end Developer" },
         { skill: "Graphic Designer" }
-      ]
+      ],
+      series: [
+        {
+          name: "",
+          data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+        },
+        {
+          name: "",
+          data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+        },
+        {
+          name: "",
+          data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }
+      ],
+      chartOptions: {
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "50%",
+            endingShape: "rounded"
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"]
+        },
+
+        xaxis: {
+          categories: ["CPU", "RAM", "PCI", "Disk", "Network"]
+        },
+        yaxis: {
+          title: {
+            text: "Values"
+          }
+        },
+        fill: {
+          opacity: 1
+        }
+      }
     };
   },
   methods: {
