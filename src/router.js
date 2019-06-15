@@ -3,7 +3,8 @@ import Router from 'vue-router';
 import TodoList from './components/TodoList.vue';
 import About from './components/About.vue';
 import SignUp from './components/SignUp.vue';
-import Chart from './components/Chart.vue';
+import barChart from './components/barChart.vue';
+import boxPlot from './components/boxPlot.vue';
 
 Vue.use(Router);
 
@@ -29,9 +30,14 @@ export default new Router({
 			component: SignUp
 		},
 		{
-			path: '/Chart',
-			name: 'Chart',
-			component: Chart
+			path: '/barChart',
+			name: 'barChart',
+			component: barChart
+		},
+		{
+			path: '/boxPlot',
+			name: 'boxPlot',
+			component: boxPlot
 		}
 	]
 });

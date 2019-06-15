@@ -3,7 +3,8 @@
     <div id="nav">
       <Slide>
         <router-link to="/">Hardware Configuration</router-link>
-        <router-link to="/Chart">Chart</router-link>
+        <router-link to="/barChart">Bar Chart</router-link>
+        <router-link to="/boxPlot">Box Plot</router-link>
         <router-link to="/About">About</router-link>
         <router-link to="/SignUp">Sign up</router-link>
       </Slide>

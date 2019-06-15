@@ -1,5 +1,5 @@
 !<template>
-  <div id="chart">
+  <div id="barChart">
     <form>
       <div v-for="(data,index) in series" :key="index">
         <label>Configuration name:&nbsp;</label>
@@ -22,7 +22,7 @@
       </div>
       <button type="button" v-on:click="addEntry()">Press to add a field</button>
     </form>
-    <apexchart type="bar" height="350" :options="chartOptions" :series="series"/>
+    <barChart type="bar" height="350" :options="chartOptions" :series="series"/>
   </div>
 </template>
 <!--<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>-->
@@ -35,7 +35,7 @@ import VueApexCharts from "vue-apexcharts";
 export default {
   name: "Chart",
   components: {
-    apexchart: VueApexCharts
+    barChart: VueApexCharts
   },
   methods: {
     addEntry() {
@@ -45,10 +45,10 @@ export default {
         data: [44, 55, 57, 56, 61, 72]
       };
       this.series.push(entryData);
-      console.log(entryData);
+      //console.log(entryData);
     },
     removeEntry(id) {
-      console.log(id);
+      //console.log(id);
       this.series.splice(id, 1);
     }
   },
@@ -69,26 +69,28 @@ export default {
         }
       ],
       chartOptions: {
+        chart: {
+          toolbar: {
+            show: true,
+            tools: {
+              download: true,
+              selection: true,
+              zoom: true,
+              zoomin: true,
+              zoomout: true,
+              pan: true
+            }
+          }
+        },
+        title: {
+          text: "Bar chart",
+          align: "center"
+        },
         plotOptions: {
           bar: {
             horizontal: false,
             columnWidth: "50%",
             endingShape: "rounded"
-          }
-        },
-        zoom: {
-          enabled: true,
-          type: "y",
-          zoomedArea: {
-            fill: {
-              color: "#90CAF9",
-              opacity: 0.4
-            },
-            stroke: {
-              color: "#0D47A1",
-              opacity: 0.4,
-              width: 1
-            }
           }
         },
         legend: {
@@ -106,7 +108,6 @@ export default {
           width: 2,
           colors: ["transparent"]
         },
-
         xaxis: {
           categories: [
             "CPU-SingleCore",
@@ -144,5 +145,9 @@ input {
 }
 .inputName {
   width: 150px;
+}
+.apexcharts-tooltip {
+  background: #323333;
+  color: orange;
 }
 </style>
