@@ -13,7 +13,7 @@
         <br>
         <span v-for="(value, index1) in data.data" :key="index1">
           <label>{{chartOptions.xaxis.categories[index1]}}:</label>&nbsp;
-          <input type="number" v-model="data.data[index1]">
+          <input type="number" v-model="data.data[index1]">&nbsp;
           <!--<span v-if="index1 == 2">
             <br>
           </span>-->
