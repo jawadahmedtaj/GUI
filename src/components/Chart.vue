@@ -2,8 +2,9 @@
   <div id="chart">
     <form>
       <div v-for="(data,index) in series" :key="index">
-        <label>Please enter a name for configuration:&nbsp;</label>
+        <label>Configuration name:&nbsp;</label>
         <input
+          class="inputName"
           type="text"
           placeholder="Name of Configuration"
           v-model="data.name"
@@ -11,12 +12,11 @@
         >
         <br>
         <span v-for="(value, index1) in data.data" :key="index1">
-          &nbsp;
           <label>{{chartOptions.xaxis.categories[index1]}}:</label>&nbsp;
           <input type="number" v-model="data.data[index1]">
-          <span v-if="index1 == 2">
+          <!--<span v-if="index1 == 2">
             <br>
-          </span>
+          </span>-->
         </span>
         <button type="button" v-on:click="removeEntry(index)">Remove this entry</button>
       </div>
@@ -95,7 +95,7 @@ export default {
           showForNullSeries: false,
           showForZeroSeries: false,
           onItemClick: {
-            toggleDataSeries: false
+            toggleDataSeries: true
           }
         },
         dataLabels: {
@@ -133,7 +133,16 @@ export default {
 
 <style scoped>
 button {
-  margin-left: 5px;
+  position: relative;
   margin-top: 5px;
+  margin-bottom: 5px;
+}
+input {
+  width: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.inputName {
+  width: 150px;
 }
 </style>
