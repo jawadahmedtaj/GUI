@@ -5,6 +5,7 @@ import About from './components/About.vue';
 import SignUp from './components/SignUp.vue';
 import barChart from './components/barChart.vue';
 import boxPlot from './components/boxPlot.vue';
+import Login from './components/Login.vue';
 
 Vue.use(Router);
 
@@ -12,6 +13,11 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
+			name: 'Login',
+			component: Login
+		},
+		{
+			path: '/TodoList',
 			name: 'TodoList',
 			component: TodoList
 		},

@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <Slide>
-        <router-link to="/">Hardware Configuration</router-link>
+        <router-link to="/">Login</router-link>
+        <router-link to="/TodoList">Hardware Configuration</router-link>
         <router-link to="/barChart">Bar Chart</router-link>
         <router-link to="/boxPlot">Box Plot</router-link>
         <router-link to="/About">About</router-link>
