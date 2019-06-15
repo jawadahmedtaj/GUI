@@ -18,7 +18,9 @@
             <br>
           </span>
         </span>
+        <button type="button" v-on:click="removeEntry(index)">Remove this entry</button>
       </div>
+      <button type="button" v-on:click="addEntry()">Press to add a field</button>
     </form>
     <apexchart type="bar" height="350" :options="chartOptions" :series="series"/>
   </div>
@@ -34,6 +36,21 @@ export default {
   name: "Chart",
   components: {
     apexchart: VueApexCharts
+  },
+  methods: {
+    addEntry() {
+      var len = this.series.length + 1;
+      var entryData = {
+        name: "Configuration " + len,
+        data: [44, 55, 57, 56, 61, 72]
+      };
+      this.series.push(entryData);
+      console.log(entryData);
+    },
+    removeEntry(id) {
+      console.log(id);
+      this.series.splice(id, 1);
+    }
   },
   data() {
     return {
@@ -113,3 +130,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+button {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+</style>
