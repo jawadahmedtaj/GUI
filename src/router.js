@@ -6,6 +6,7 @@ import SignUp from './components/SignUp.vue';
 import barChart from './components/barChart.vue';
 import boxPlot from './components/boxPlot.vue';
 import Login from './components/Login.vue';
+import BackupBar from './components/BackupBar.vue';
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
 			path: '/boxPlot',
 			name: 'boxPlot',
 			component: boxPlot
+		},
+		{
+			path: '/BackupBar',
+			name: 'BackupBar',
+			component: BackupBar
 		}
 	]
 });

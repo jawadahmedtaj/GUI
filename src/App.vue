@@ -8,6 +8,7 @@
         <router-link to="/boxPlot">Box Plot</router-link>
         <router-link to="/About">About</router-link>
         <router-link to="/SignUp">Sign up</router-link>
+        <router-link to="/BackupBar">BackupBar</router-link>
       </Slide>
 
       <router-view/>
