@@ -40,10 +40,19 @@ export default {
   },
   methods: {
     addEntry() {
-      var len = this.series.length + 1;
+      var len = this.series.length;
+      console.log(json.results.row[len].data[2].__text);
       var entryData = {
-        name: "Configuration " + len,
-        data: [44, 55, 57, 56, 61, 72]
+        name: json.results.row[0].data[0]._columname + " " + ++len,
+        data: [
+          json.results.row[len].data[2].__text,
+          json.results.row[len].data[3].__text,
+          json.results.row[len].data[4].__text,
+          json.results.row[len].data[5].__text,
+          json.results.row[len].data[6].__text,
+          json.results.row[len].data[7].__text,
+          json.results.row[len].data[8].__text
+        ]
       };
       this.series.push(entryData);
       //console.log(entryData);
@@ -55,20 +64,19 @@ export default {
   },
   data() {
     return {
-      myJson: json,
       //nameCheck: Object.keys(json.results.row[0].data).length,
       series: [
         {
-          name: "Configuration 1",
-          data: [44, 55, 57, 56, 61, 72]
-        },
-        {
-          name: "Configuration 2",
-          data: [76, 85, 101, 98, 87, 72]
-        },
-        {
-          name: "Configuration 3",
-          data: [35, 41, 36, 26, 45, 72]
+          name: json.results.row[0].data[0]._columname + " 1",
+          data: [
+            json.results.row[0].data[2].__text,
+            json.results.row[0].data[3].__text,
+            json.results.row[0].data[4].__text,
+            json.results.row[0].data[5].__text,
+            json.results.row[0].data[6].__text,
+            json.results.row[0].data[7].__text,
+            json.results.row[0].data[8].__text
+          ]
         }
       ],
       chartOptions: {
@@ -113,12 +121,13 @@ export default {
         },
         xaxis: {
           categories: [
-            "CPU-SingleCore",
-            "CPU-MultiCore",
-            "RAM",
-            "PCI",
-            "Disk",
-            "Network"
+            "PSNR",
+            "Energy",
+            "SSIM",
+            "Time",
+            "Watt",
+            "Speed",
+            "Size"
           ]
         },
         yaxis: {
