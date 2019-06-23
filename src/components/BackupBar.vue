@@ -10,6 +10,10 @@
           v-model="data.name"
           name="configName"
         >
+        <span v-for="(featName,ind) in feat" :key="ind">
+          <input type="checkbox" checked>
+          {{featName}}
+        </span>
         <br>
         <span v-for="(value, index1) in data.data" :key="index1">
           <label>{{chartOptions.xaxis.categories[index1]}}:</label>&nbsp;
@@ -41,7 +45,7 @@ export default {
   methods: {
     addEntry() {
       var len = this.series.length;
-      console.log(json.results.row[len].data[2].__text);
+      console.log(len);
       var entryData = {
         name: json.results.row[0].data[0]._columname + " " + ++len,
         data: [
@@ -64,6 +68,7 @@ export default {
   },
   data() {
     return {
+      feat: json.results.row[0].data[0].__text.split(","),
       //nameCheck: Object.keys(json.results.row[0].data).length,
       series: [
         {
