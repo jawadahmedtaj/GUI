@@ -126,13 +126,13 @@ export default {
         },
         xaxis: {
           categories: [
-            "PSNR",
-            "Energy",
+            "PSNR (dB)",
+            "Energy (J)",
             "SSIM",
-            "Time",
-            "Watt",
-            "Speed",
-            "Size"
+            "Time (s)",
+            "Watt (w)",
+            "Speed (mbit/s)",
+            "Size (mbit)"
           ]
         },
         yaxis: {
