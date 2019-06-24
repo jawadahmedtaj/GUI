@@ -11,6 +11,7 @@
           name="configName"
         >
         <span v-for="(featName,ind) in feat" :key="ind">
+          <br>
           <input type="checkbox" checked>
           {{featName}}
         </span>
@@ -74,13 +75,25 @@ export default {
         {
           name: json.results.row[0].data[0]._columname + " 1",
           data: [
-            json.results.row[0].data[2].__text,
+            //json.results.row[0].data[2].__text,
             json.results.row[0].data[3].__text,
-            json.results.row[0].data[4].__text,
-            json.results.row[0].data[5].__text,
-            json.results.row[0].data[6].__text,
-            json.results.row[0].data[7].__text,
-            json.results.row[0].data[8].__text
+            //json.results.row[0].data[4].__text,
+            //json.results.row[0].data[5].__text,
+            //json.results.row[0].data[6].__text,
+            //json.results.row[0].data[7].__text
+            // json.results.row[0].data[8].__text
+          ]
+        },
+        {
+          name: json.results.row[1].data[0]._columname + " 2",
+          data: [
+            //json.results.row[1].data[2].__text,
+            json.results.row[1].data[3].__text,
+            //json.results.row[1].data[4].__text,
+            //json.results.row[1].data[5].__text,
+            //json.results.row[1].data[6].__text,
+            //json.results.row[1].data[7].__text
+            //json.results.row[1].data[8].__text
           ]
         }
       ],
@@ -106,7 +119,12 @@ export default {
           bar: {
             horizontal: false,
             columnWidth: "50%",
-            endingShape: "rounded"
+            endingShape: "flat"
+          },
+          dataLabels: {
+            position: "center",
+            maxItems: 500,
+            hideOverflowingLabels: false
           }
         },
         legend: {
@@ -126,13 +144,13 @@ export default {
         },
         xaxis: {
           categories: [
-            "PSNR (dB)",
+            //"PSNR (dB)",
             "Energy (J)",
-            "SSIM",
-            "Time (s)",
-            "Watt (w)",
-            "Speed (mbit/s)",
-            "Size (mbit)"
+            //"SSIM",
+            //"Time (s)",
+            //"Watt (w)",
+            //"Speed (mbit/s)"
+            // "Size (mbit)"
           ]
         },
         yaxis: {
