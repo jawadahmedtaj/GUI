@@ -13,7 +13,7 @@
 	},
 	"main": "background.js",
 	"dependencies": {
-		"apexcharts": "^3.8.0",
+		"apexcharts": "^3.24.0",
 		"core-js": "^2.6.5",
 		"vee-validate": "^2.2.7",
 		"vue": "^2.6.10",
